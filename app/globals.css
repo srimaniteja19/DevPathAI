@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light, coastal-inspired palette to match reference UI */
+  --background: #b9e5f5; /* soft aqua page background */
+  --foreground: #102a43; /* deep blue text */
+  --card: #ffe7c4; /* warm sand cards */
+  --card-hover: #ffdfb2; /* slightly deeper sand on hover */
+  --border: #1f8aa2; /* teal borders */
+  --primary: #1f8aa2; /* primary teal */
+  --primary-muted: #0f6c83; /* darker teal for hovers */
+  --accent: #ffb65c; /* warm accent for highlights */
+  --muted: #35546a; /* muted blue-gray text */
+  --success: #2e7d32;
+  --destructive: #c62828;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Focus ring for a11y */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
