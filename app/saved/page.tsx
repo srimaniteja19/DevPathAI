@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Trash2, Pencil } from "lucide-react";
+import { ArrowLeft, Trash2, Pencil, Target } from "lucide-react";
 import { useCourseStorage } from "@/hooks/useCourseStorage";
 
 export default function SavedPage() {
@@ -49,7 +49,13 @@ export default function SavedPage() {
             Back
           </Link>
           <h1 className="text-lg font-semibold text-[var(--foreground)]">Saved courses</h1>
-          <span />
+          <Link
+            href="/interview"
+            className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-[var(--muted)] hover:text-[var(--foreground)] hover:bg-[var(--card)] transition"
+          >
+            <Target className="h-4 w-4" />
+            Interview
+          </Link>
         </div>
       </header>
 

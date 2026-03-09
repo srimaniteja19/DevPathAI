@@ -28,15 +28,24 @@ export default function HomePage() {
             <BookOpen className="h-6 w-6 text-[var(--primary)]" />
             DevPath AI
           </Link>
-          {savedCourses.length > 0 && (
+          <div className="flex items-center gap-2">
             <Link
-              href="/saved"
+              href="/interview"
               className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition"
             >
-              <History className="h-4 w-4" />
-              Saved ({savedCourses.length})
+              <Target className="h-4 w-4" />
+              Interview Prep
             </Link>
-          )}
+            {savedCourses.length > 0 && (
+              <Link
+                href="/saved"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition"
+              >
+                <History className="h-4 w-4" />
+                Saved ({savedCourses.length})
+              </Link>
+            )}
+          </div>
         </div>
       </header>
 
@@ -89,6 +98,22 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+
+          {/* Interview Prep feature card */}
+          <Link
+            href="/interview"
+            className="mt-6 flex items-center gap-4 rounded-2xl bg-white p-5 shadow-lg ring-1 ring-black/5 transition hover:ring-[var(--primary)]/30"
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--primary)]/10 text-[var(--primary)]">
+              <Target className="h-5 w-5" />
+            </span>
+            <div className="min-w-0">
+              <h3 className="font-semibold text-[var(--foreground)]">Interview Prep</h3>
+              <p className="text-sm text-[var(--muted)]">
+                Get personalized prep from your resume and job description.
+              </p>
+            </div>
+          </Link>
         </div>
       </main>
     </div>
